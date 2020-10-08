@@ -1,5 +1,4 @@
 var express = require('express');
 var app = express();
-app.use(express.static('dist/Netflix'));
-app.get('/', (req, res, next)=>{res.redirect('/');})
+app.use(express.static('dist'));
 app.listen(8080)
