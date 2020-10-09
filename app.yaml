@@ -1,4 +1,4 @@
-runtime: nodejs
+runtime: custom
 # Ce paramètre est obligatoire.
 #Il s'agit du nom du moteur d'exécution du langage App Engine utilisé par cette application
 env: flex
