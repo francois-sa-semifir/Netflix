@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../services/film.service';
 import { ActivatedRoute } from '@angular/router';
+import Film from '../types/Film.type';
 
 @Component({
   selector: 'app-detail-film',
@@ -9,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailFilmComponent implements OnInit {
 
-  id;
-  film;
+  id: number;
+  film: Film;
 
   constructor(private filmService: FilmService, private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.id = params.id);
@@ -18,11 +19,10 @@ export class DetailFilmComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.film = this.filmService.getFilmById(this.id)
-    .subscribe(data=>{this.film =  data;
-      console.log(data);
-      console.log(this.id);
-    });
+    this.filmService.getFilmById(this.id)
+      .subscribe(data => {
+        this.film = data;
+      });
   }
 
 }
