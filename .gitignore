@@ -48,3 +48,5 @@ Thumbs.db
 # SonarQube
 .sonar/
 .scannerwork/
+
+.angular
